@@ -4,10 +4,8 @@
 #+ using the while loop and IFS.
 
 while IFS=':' read -r username passwd uid gid info home shell; do
-	if [[ "$username" && "$passwd" && "$uid" && "$gid" && "$info" && "$home" && "$shell" ]]; then
-		echo "The user $username is part of the $gid gang,"\
-		"lives in $home and rides $shell. $uid's place is"\
-		"protected by the passcode $passwd, more info"\
-		"about the user here: $info"
-	fi
+	echo "The user $username is part of the $gid gang,"\
+	"lives in $home and rides $shell. $uid's place is"\
+	"protected by the passcode $passwd, more info"\
+	"about the user here: $info"
 done < "/etc/passwd"
