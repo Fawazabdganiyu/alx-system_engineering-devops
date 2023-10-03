@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-# manage_my_process
+# This script indefinitely writes "I am alive!" to the file /tmp/my_process.
+# It pauses for 2 seconds in between every "I am alive!".
+
+while true; do
+    echo "I am alive" >> /tmp/my_process
+    sleep 2
+done
