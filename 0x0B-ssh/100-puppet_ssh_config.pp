@@ -5,10 +5,10 @@ file { '/root/.ssh/config':
   group   => 'root',
   mode    => '0600',
   content => '# My school server configuration
-Host school
+Host 54.197.78.222
   HostName 54.197.78.222
   User ubuntu
   IdentityFile ~/.ssh/school
-  PasswordAuthenticatio no
+  PasswordAuthentication no
 '
 }
