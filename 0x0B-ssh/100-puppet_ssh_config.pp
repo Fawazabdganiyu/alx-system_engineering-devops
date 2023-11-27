@@ -1,14 +1,12 @@
 # Set up my client SSH configuration file
-file { '/root/.ssh/config':
-  ensure  => present,
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0600',
-  content => '# My school server configuration
-Host 54.197.78.222
-  HostName 54.197.78.222
-  User ubuntu
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no
-'
+file_line { 'ssh_config':
+  ensure => present,
+  path   => '/etc/ssh/sshd_config',
+  line   => '    IdentityFile ~/.ssh/school',
+}
+
+file_line { 'ssh_config':
+  ensure => present,
+  path   => '/etc/ssh/sshd_config',
+  line   => '    PasswordAuthentication no',
 }
