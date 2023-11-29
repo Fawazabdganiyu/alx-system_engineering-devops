@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Install apache2 and configure a web page
+sudo apt update
+sudo apt install apache2
+echo "Hello Holberton" | tee /var/www/html/index.html
