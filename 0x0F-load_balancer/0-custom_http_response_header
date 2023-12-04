@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Configure `Nginx` web server so that each server contains its hostname in its response header
 sudo apt-get update
 sudo apt-get install nginx -y
