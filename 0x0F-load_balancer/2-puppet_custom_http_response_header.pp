@@ -1,7 +1,7 @@
 # Install and configure `Nginx` web server to have a custome header
 exec { 'apt_update':
   command => 'apt-get update',
-  path    => '/usr/bin:/usr/sbin',
+  path    => '/usr/bin:/bin',
 }
 
 package { 'nginx':
@@ -15,8 +15,7 @@ file_line { 'add_custom_header':
   after => 'server_name _;',
 }
 
-service { 'nginx':
-  ensure  => running,
-  enable  => true,
-  require => Package['nginx'],
+exec { 'restart_nginx':
+  command => 'sudo service nginx restart',
+  path    => '/usr/bin:/bin',
 }
