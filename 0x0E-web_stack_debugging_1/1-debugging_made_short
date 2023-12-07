@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Make the fix simple and short
-sudo apt-get update
-sudo apt-get install nginx -y
-sudo service nginx stop > /dev/null
+sudo service nginx restart
+kill -s QUIT "$(cat /var/run/nginx.pid)"
