@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# Install Nginx
-sudo apt-get update
-sudo apt-get install nginx -y
-sudo service nginx restart
+# Restart Nginx to make it liaten on port 80 after installation
+sudo service nginx restart > /dev/null
