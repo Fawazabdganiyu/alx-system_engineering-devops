@@ -2,8 +2,8 @@
 # Display information about subdomains
 
 get_info () {
-    record_type=$(dig $2.$1 +noall +answer | awk '{print $4}')
-    destination=$(dig $2.$1 +noall +answer | awk '{print $5}')
+    record_type=$(dig $2.$1 | awk '/ANSWER SECTION:/ {getline; print $4}')
+    destination=$(dig $2.$1 | awk '/ANSWER SECTION:/ {getline; print $5}')
 
     echo "The subdomain $2 is a $record_type record and points to $destination"
 }
