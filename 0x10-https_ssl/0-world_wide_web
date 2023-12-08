@@ -2,7 +2,7 @@
 # Display information about subdomains
 
 get_info () {
-    dig "${2}.${1}" +noall +answer | awk -v subdomain="${2}" '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+    dig $2.$1 +noall +answer | awk -v subdomain=$2 '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
 }
 
 subs=("www" "lb-01" "web-01" "web-02")
