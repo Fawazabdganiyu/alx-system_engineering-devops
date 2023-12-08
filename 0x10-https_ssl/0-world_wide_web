@@ -2,11 +2,15 @@
 # Display information about subdomains
 
 get_info () {
-    dig $2.$1 +noall +answer | awk -v subdomain=$2 '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+    record_type=$(dig $2.$1 +noall +answer | awk '{print $4}')
+    destination=$(dig $2.$1 +noall +answer | awk '{print $5}')
+
+    echo "The subdomain $2 is a $record_type record and points to $destination"
 }
 
-subs=("www" "lb-01" "web-01" "web-02")
+
 if [ "$#" -eq 1 ]; then
+    subs=("www" "lb-01" "web-01" "web-02")
     for sub in "${subs[@]}"; do
         get_info "$1" "$sub"
     done
