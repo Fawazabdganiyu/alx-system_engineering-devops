@@ -10,6 +10,6 @@ if [ "$#" -eq 1 ]; then
     for sub in "${subs[@]}"; do
         get_info "$1" "$sub"
     done
-else
+elif [ "$#" -eq 2 ]; then
     get_info "$1" "$2"
 fi
