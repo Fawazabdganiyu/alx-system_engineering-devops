@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Display information about subdomains
-# Domain = $1 and subdomain may be $2
 
 get_info () {
     dig "${2}.${1}" +noall +answer | awk -v subdomain="${2}" '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
