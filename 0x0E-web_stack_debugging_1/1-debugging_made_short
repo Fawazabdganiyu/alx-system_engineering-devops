@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Make the fix simple and short
-ls -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
 kill -s QUIT "$(cat /var/run/nginx.pid)"
