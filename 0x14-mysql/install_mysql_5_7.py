@@ -41,3 +41,16 @@ def create_table():
 def confirm_table():
     """ Confirm the table is created and not empty """
     run("mysql -uholberton_user -p -e \"use tyrell_corp; select * from nexus6\"")
+
+
+def create_replica_user():
+    """ Create a new user for replica server """
+    put("./create_replicate_user.sql", "~/")
+    with cd("~/"):
+        run("cat create_replicate_user.sql | mysql -hlocalhost -uroot -p")
+
+
+def confirm_replica_user():
+    """ Confirm that the replica_user is created with the appropriate grants """
+    run("mysql -uholberton_user -p -e 'SELECT user, Repl_slave_priv FROM mysql.user'")
+    
