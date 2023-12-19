@@ -17,3 +17,15 @@ def install():
 def version():
     """ Check mysql installed version """
     run("mysql --version")
+
+
+def create_user():
+    """ Create a new user """
+    put("./create_holberton_user.sql", "~/")
+    with cd("~/"):
+        run("cat create_holberton_user.sql | mysql -hlocalhost -uroot -p")
+
+
+def confirm_user():
+    """ Confirm the created user and his privileges """
+    run("mysql -uholberton_user -p -e \"SHOW GRANTS FOR 'holberton_user'@'localhost'\"")
