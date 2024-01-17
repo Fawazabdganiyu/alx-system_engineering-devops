@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """
 Query the Reddit API, parse the the title of all hot articles,
 and print a sorted count of given keywords (case-insensitive,
