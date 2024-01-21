@@ -1,4 +1,7 @@
 # Wordpress website running on a LAMP stack outage incident report
+The following is the incident report for the ALX Wordpress website outage
+that occurred on January 16, 2024.
+
 ![500_error_response](Asset/500_error_response.png)
 
 ## Issue Summary
