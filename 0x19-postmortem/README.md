@@ -1,5 +1,5 @@
 # Wordpress website running on a LAMP stack outage incident report
-![500_error_response](https://imgur.com/a/xWz9pKm)
+![500_error_response](Asset/500_error_response.png)
 
 ## Issue Summary
 From 6:00 AM to 8:06 AM WAT, request to ALX Wordpress website running on LAMP stack
